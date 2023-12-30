@@ -28,7 +28,6 @@ let books = [
     }
 ];
 
-
 // route to get all books
 app.get('/books', (req, res) => {
     res.json(books);
@@ -42,7 +41,7 @@ app.get('/books/:id', (req, res) => {
 });
 
 // route to create a new book
-app.get('/books', (req, res) => {
+app.port('/books', (req, res) => {
     const book = {
         id: books.lenght + 1,
         title: req.body.title,
