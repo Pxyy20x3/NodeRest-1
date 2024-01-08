@@ -38,7 +38,7 @@ app.get("/books/:id", (req, res) => {
 
 app.post("/books", (req, res) => {
     const book = req.body;
-    db.run(`INSERT INTO books (title, author) VALUES (?, ?)`, book.title, book.anthor, function (err) {
+    db.run(`INSERT INTO books (title, author) VALUES (?, ?)`, book.title, book.author, function (err) {
         if (err) {
             res.status(500).send(err);
         } else {
@@ -50,7 +50,7 @@ app.post("/books", (req, res) => {
 
 app.put("/books/:id", (req, res) => {
     const book = req.body;
-    db.run(`UPDATE books SET title = ?, author = ? WHERE id = ?`, book.title, book.anthor, req.params.id, function (err) {
+    db.run(`UPDATE books SET title = ?, author = ? WHERE id = ?`, book.title, book.author, req.params.id, function (err) {
         if (err) {
             res.status(500).send(err);
         } else {
